@@ -1,28 +1,39 @@
 #include <iostream>
 #include <windows.h>
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+#include <time.h>
 using namespace std;
-int main(int argc, char** argv) {
-	SetConsoleOutputCP(CP_UTF8);
-	SetConsoleCP(CP_UTF8);
-	float c1=0.0,c2=0.0,c3=0.0,promedio=0.0;
-	cout<<"dame la calificacion 1:";
-	cin>>c1;
-	cout<<"dame la calificacion 2:";
-	cin>>c2;
-	cout<<"dame la calificacion 3:";
-	cin>>c3;
-	promedio=(c1+c2+c3)/3;
-	cout<<"el promdedio de calificacion es:"<<promedio<<"\n";
-	system("pause");
-	printf("dame la calificacion 1:");
-	scanf("%f",&c1);
-	printf("dame la calificacion 2:");
-	scanf("%f",&c2);
-	printf("dame la calificacion 3:");
-	scanf("%f",&c3);
-	promedio=(c1+c2+c3)/3;
-		printf("El promedio de calificaciones es: %7.2f",promedio);
-	return 0;
+int main()
+{
+	int n,i,c,ext,t;
 	
+	srand(time(0));
+	do{
+cout<<"este programa generara los numeros aleatorios que quieras (de 2 para arriba y no negativos) y los ordenara de mayor a menor...\n";
+cin>>n;
+if(n>1){t=1;}else{system("cls");}
+}while(t!=1);
+
+int vector[n];
+for(i=0;i<n;i++){vector[i]=rand()%10;}
+cout<<"aqui estan tus numeros\n";
+for(i=0;i<n;i++){cout<<vector[i]; if(i!=n){cout<<",";}}
+
+cout<<"ahora voy a oredenarlos...\n";
+
+
+	
+
+for(i=0;i<n;i++){
+ for(c=i+1;c<n;c++){
+	if(vector[i]>vector[c]){
+		ext=vector[i];
+		vector[i]=vector[c];
+		vector[c]=ext;
+	}
+ }
+
+}
+
+for(i=0;i<n;i++){cout<<vector[i]; if(i!=n){cout<<",";}}
+
 }
